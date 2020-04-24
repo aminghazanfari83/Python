@@ -14,3 +14,10 @@ def fibo(n):
     if n==1:
         return 1
     return fibo(n-1)+fibo(n-2)
+
+#Provide list of n fibonacci numbers 
+def fibo_list(n):
+   return [fibo(i) for i in range(n+1)]
+
+#print list of first 10 fibonacci numbers
+print(fibo_list(10))
