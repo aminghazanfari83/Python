@@ -31,3 +31,8 @@ def fibo_list(n):
 
 #print list of first 10 fibonacci numbers
 print(fibo_list(10))
+
+
+def fibo_last_digit(n):
+    #This function returns the last digit of n's fibonacci number
+    return int('{}'.format(fibo_iter(n))[-1])
