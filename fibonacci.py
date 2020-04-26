@@ -36,3 +36,13 @@ print(fibo_list(10))
 def fibo_last_digit(n):
     #This function returns the last digit of n's fibonacci number
     return int('{}'.format(fibo_iter(n))[-1])
+
+
+#Product of consecutive Fib numbers
+def productFib(prod):
+    # ythis function checks if a given number can be written as a product of
+    #two consequitive Fibonacci numbers if possible
+    f0,f1 = 0,1
+    while f0*f1 <prod:    
+        f0,f1 = f1,f0+f1
+    return [f0,f1, prod==f0*f1] 
