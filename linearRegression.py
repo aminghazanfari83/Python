@@ -4,7 +4,8 @@
 Created on Mon Apr 27 17:41:07 2020
 
 @author: aminghazanfari
-This is the exmpale provided in Python Data Science Handbook
+This example is provided in Python Data Science Handbook
+https://jakevdp.github.io/PythonDataScienceHandbook/05.02-introducing-scikit-learn.html
 """
 
 #Supervised learning example: Simple linear regression by using Scikit-learn
