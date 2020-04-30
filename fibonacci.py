@@ -45,4 +45,51 @@ def productFib(prod):
     f0,f1 = 0,1
     while f0*f1 <prod:    
         f0,f1 = f1,f0+f1
+        
+        
     return [f0,f1, prod==f0*f1] 
+
+fibo_cache = {}
+
+#fibonacci implementation with memory
+def fibo_rec_memo(n):
+    if n in fibo_cache:
+        return fibo_cache[n]
+    if n ==1:  
+        return 1
+    elif n==2:
+        return 1
+    elif n > 2:
+        res = fibo_rec_memo(n-1)+fibo_rec_memo(n-2)
+        
+    #cache the value first and then return it
+    fibo_cache[n] = res
+    return res
+
+#test run
+for n in range(1,10001):
+    print(n,';',fibo_rec_memo(n))
+    
+    
+#fibonacci implementation with memory by 
+#using the bulit-in function lru_cache
+from functools import lru_cache
+
+@lru_cache(maxsize=1000)
+def fibo_rec_memo_lr(n):
+    #This function provides n's fibonacci number  
+    #recursive approach for implementation of fibonacci
+    #check that the input is a positive integer
+    if type(n) != int:
+        raise TypeError("n must be a positive int")
+    if n<1:
+        raise ValueError("n must be a positive int")
+    
+    #compute the Nth term
+    if n==0:
+        return 0
+    elif n==1:
+        return 1
+    return fibo_rec(n-1)+fibo_rec(n-2)
+    
+    
