@@ -30,7 +30,7 @@ def fibo_list(n):
    return [fibo_iter(i) for i in range(n+1)]
 
 #print list of first 10 fibonacci numbers
-print(fibo_list(10))
+#print(fibo_list(10))
 
 
 def fibo_last_digit(n):
@@ -67,8 +67,8 @@ def fibo_rec_memo(n):
     return res
 
 #test run
-for n in range(1,10001):
-    print(n,';',fibo_rec_memo(n))
+#for n in range(1,10):
+#    print(n,';',fibo_rec_memo(n))
     
     
 #fibonacci implementation with memory by 
@@ -90,6 +90,8 @@ def fibo_rec_memo_lr(n):
         return 0
     elif n==1:
         return 1
-    return fibo_rec(n-1)+fibo_rec(n-2)
+    return fibo_rec_memo_lr(n-1)+fibo_rec_memo_lr(n-2)
     
-    
+    #test run
+for n in range(1,10):
+    print(n,';',fibo_rec_memo_lr(n))
